@@ -1,0 +1,16 @@
+version: '2'
+services:
+  jhipster_react_680-app:
+    image: jhipster_react_680
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://jhipster_react_680-postgresql:5432/jhipster_react_680
+      - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
+    ports:
+      - 8080:8080
+  jhipster_react_680-postgresql:
+    extends:
+      file: postgresql.yml
+      service: jhipster_react_680-postgresql

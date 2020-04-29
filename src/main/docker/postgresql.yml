@@ -1,0 +1,11 @@
+version: '2'
+services:
+  jhipster_react_680-postgresql:
+    image: postgres:12.1
+    # volumes:
+    #     - ~/volumes/jhipster/jhipster_react_680/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=jhipster_react_680
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
